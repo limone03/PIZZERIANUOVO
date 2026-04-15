@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzeria Dalia – Valori di Famiglia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-text">
+      Dalia
+      <span>Valori di Famiglia</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="menu.html">Menù</a></li>
+    <li><a href="#social">Social</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <img class="hero-img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600&q=80" alt="Pizza napoletana al forno a legna" />
+  <div class="hero-content">
+    <p class="hero-eyebrow">Dal cuore della famiglia</p>
+    <h1 class="hero-title">Vieni a scoprire<br>le nostre <em>Pizze</em></h1>
+    <p class="hero-subtitle">Gusto autentico, passione familiare:<br>dove ogni fetta è un abbraccio!</p>
+    <a href="menu.html" class="hero-cta"><span>Scopri il Menù</span></a>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scorri</span>
+  </div>
+</section>
+
+<!-- ─── STORIA ─── -->
+<section class="storia">
+  <div class="storia-visual">
+    <div class="storia-logo-wrap">
+      <!-- Logo placeholder – sostituisci con <img src="logo.png"> -->
+      <svg viewBox="0 0 300 300" width="280" xmlns="http://www.w3.org/2000/svg">
+        <!-- Pizza slice shape -->
+        <path d="M150 30 L270 250 Q150 290 30 250 Z" fill="#1a1a1a" stroke="#c0392b" stroke-width="2"/>
+        <path d="M150 30 L270 250 Q150 290 30 250 Z" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
+        <!-- crust detail -->
+        <path d="M45 238 Q150 280 255 238" fill="none" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
+        <!-- circles (mozzarella) -->
+        <circle cx="150" cy="160" r="12" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.5"/>
+        <circle cx="120" cy="200" r="9" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="1.5"/>
+        <circle cx="180" cy="200" r="9" fill="none" stroke="rgba(245,240,232,0.4)" stroke-width="1.5"/>
+        <!-- foglie basilico -->
+        <ellipse cx="138" cy="148" rx="10" ry="5" fill="#2ecc71" transform="rotate(-30 138 148)" opacity="0.9"/>
+        <ellipse cx="162" cy="148" rx="10" ry="5" fill="#27ae60" transform="rotate(30 162 148)" opacity="0.9"/>
+        <!-- testo -->
+        <text x="150" y="72" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="38" font-weight="700" fill="#f5f0e8" letter-spacing="3">DALIA</text>
+        <text x="150" y="92" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="11" fill="#c9a84c" letter-spacing="4">VALORI DI FAMIGLIA</text>
+        <!-- V -->
+        <text x="150" y="270" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="28" font-weight="700" fill="#c0392b">V</text>
+      </svg>
+    </div>
+  </div>
+  <div class="storia-content">
+    <p class="section-label">La nostra Storia</p>
+    <h2 class="storia-title">Una <em>storia</em><br>di famiglia</h2>
+    <p class="storia-text">
+      Il nostro logo nasce con l'obiettivo di rappresentare la nostra famiglia.
+      Le due foglie di basilico rappresentano papà Gianni e mamma Margherita,
+      la mozzarella invece i tre figli Anthony, Noemi e Alessandra.
+      <br><br>
+      La famiglia non è solo uno spazio fisico dove sentirsi al sicuro, ma anche
+      il luogo degli affetti, delle relazioni profonde, la propria base sicura.
+      Il clima familiare è importante per il benessere degli individui ed
+      entrando nel nostro locale vorremmo portarvi un po' nel nostro.
+    </p>
+  </div>
+</section>
+
+<!-- ─── SCROLL SCRIPT ─── -->
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+</script>
+
+</body>
+</html>

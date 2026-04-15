@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menù – Pizzeria Dalia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-text">
+      Dalia
+      <span>Valori di Famiglia</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html" class="active">Menù</a></li>
+    <li><a href="#social">Social</a></li>
+  </ul>
+</nav>
+
+<!-- ─── MENU HERO ─── -->
+<div class="menu-hero">
+  <h1 class="menu-hero-title">Il nostro <em>Menù</em></h1>
+  <p class="menu-hero-sub">Ingredienti selezionati · Forno a legna · Tradizione napoletana</p>
+</div>
+
+<!-- ─── STICKY NAV ─── -->
+<div class="menu-nav" id="menuNav">
+  <div class="menu-nav-inner">
+    <button class="menu-nav-btn active" onclick="scrollTo('antipasti')">Antipasti</button>
+    <button class="menu-nav-btn" onclick="scrollTo('fritture')">Fritture</button>
+    <button class="menu-nav-btn" onclick="scrollTo('pizze-rosse')">Pizze Rosse</button>
+    <button class="menu-nav-btn" onclick="scrollTo('pizze-bianche')">Pizze Bianche</button>
+    <button class="menu-nav-btn" onclick="scrollTo('famiglia')">Le Nostre</button>
+    <button class="menu-nav-btn" onclick="scrollTo('ripieni')">Ripieni</button>
+    <button class="menu-nav-btn" onclick="scrollTo('saltimbocca')">Saltimbocca</button>
+    <button class="menu-nav-btn" onclick="scrollTo('bibite')">Bevande</button>
+    <button class="menu-nav-btn" onclick="scrollTo('dolci')">Dolci</button>
+  </div>
+</div>
+
+<!-- ─── MENU CONTENT ─── -->
+<main class="menu-main">
+
+  <!-- ANTIPASTI -->
+  <section class="menu-section" id="antipasti">
+    <div class="menu-section-header">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Antipasti</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Bresaola, rucola, parmigiano e pomodorini</div>
+      </div>
+      <div class="menu-item-price">13,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Prosciutto crudo e mozzarella di bufala</div>
+      </div>
+      <div class="menu-item-price">13,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Antipasto all'italiana</div>
+      </div>
+      <div class="menu-item-price">13,00€</div>
+    </div>
+  </section>
+
+  <!-- LE NOSTRE FRITTURE -->
+  <section class="menu-section" id="fritture">
+    <div class="menu-section-header">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Le Nostre Fritture</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Frittatina classica</div></div>
+      <div class="menu-item-price">3,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Frittatina cacio e pepe</div></div>
+      <div class="menu-item-price">3,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Crocchè Classico con mozzarella</div></div>
+      <div class="menu-item-price">1,50€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Crocchettone bronte</div></div>
+      <div class="menu-item-price">4,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Crocchettone bacon e cheddar</div></div>
+      <div class="menu-item-price">4,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Crocchettone porcini e tartufo con scaglie di caciocavallo</div></div>
+      <div class="menu-item-price">5,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Crocchettone cacio e pepe con scaglie di caciocavallo</div></div>
+      <div class="menu-item-price">4,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Arancino alla bolognese</div></div>
+      <div class="menu-item-price">1,50€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">3 Stick di mozzarella impanata</div></div>
+      <div class="menu-item-price">2,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Fritto Misto Dalia</div>
+        <div class="menu-item-desc">contiene di patatine, crocchè, arancino, frittatina, 1 stick di mozzarella</div>
+      </div>
+      <div class="menu-item-price">7,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta stick piccola</div></div>
+      <div class="menu-item-price">3,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta stick grande</div></div>
+      <div class="menu-item-price">5,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta dippers</div></div>
+      <div class="menu-item-price">5,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta chips</div></div>
+      <div class="menu-item-price">5,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta twisters</div></div>
+      <div class="menu-item-price">6,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta con Wurstel e Cheddar</div></div>
+      <div class="menu-item-price">7,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta alla zingara</div></div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta con Bacon e Cheddar</div></div>
+      <div class="menu-item-price">7,00€</div>
+    </div>
+  </section>
+
+  <!-- PIZZE ROSSE -->
+  <section class="menu-section" id="pizze-rosse">
+    <div class="menu-section-header">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Le Nostre Pizze Rosse</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Marinara</div>
+        <div class="menu-item-desc">Pomodoro, origano, aglio, acciughe, olive e olio evo</div>
+      </div>
+      <div class="menu-item-price">4,50€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Napoletana</div>
+        <div class="menu-item-desc">Pomodoro, origano, aglio e olio evo</div>
+      </div>
+      <div class="menu-item-price">4,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Cosacca</div>
+        <div class="menu-item-desc">Pomodoro, parmigiano grattugiato, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">4,50€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Margherita</div>
+        <div class="menu-item-desc">Pomodoro, mozzarella, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">5,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Diavola</div>
+        <div class="menu-item-desc">Pomodoro, spianata piccante, mozzarella, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">7,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Siciliana</div>
+        <div class="menu-item-desc">Pomodoro, mozzarella, melanzane, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">7,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Provola e Pepe</div>
+        <div class="menu-item-desc">Pomodoro, provola, pepe, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">6,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Bufalina</div>
+        <div class="menu-item-desc">Pomodoro, mozzarella di bufala, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Capricciosa</div>
+        <div class="menu-item-desc">Pomodoro, carciofi, olive, salame, prosciutto cotto, funghi, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Pitta</div>
+        <div class="menu-item-desc">Pomodoro, mozzarella, salsiccia, patatine fritte, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Americana</div>
+        <div class="menu-item-desc">Mozzarella, pomodoro, wurstel, patatine, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">7,00€</div>
+    </div>
+  </section>
+
+  <!-- PIZZE BIANCHE -->
+  <section class="menu-section" id="pizze-bianche">
+    <div class="menu-section-header">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Le Nostre Pizze Bianche</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Panciamia</div>
+        <div class="menu-item-desc">Mozzarella, pancetta, patate al forno, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Tedesca</div>
+        <div class="menu-item-desc">Mozzarella, wurstel, patatine, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">7,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Tonnarella</div>
+        <div class="menu-item-desc">Mozzarella, tonno, cipolla, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">7,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Ortolana</div>
+        <div class="menu-item-desc">Mozzarella, crema di zucchine, peperoni, melanzane, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Diavola 2.0</div>
+        <div class="menu-item-desc">Mozzarella, spianata piccante, gorgonzola, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Mimosa</div>
+        <div class="menu-item-desc">Panna, mais, prosciutto cotto, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">7,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Salsiccia e friarielli</div>
+        <div class="menu-item-desc">Mozzarella, salsiccia, friarielli, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Croccopizza</div>
+        <div class="menu-item-desc">Patate al forno, provola, pancetta, funghi porcini, crocchè, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Fiocco</div>
+        <div class="menu-item-desc">Mozzarella, patate schiacciate, prosciutto cotto, pepe, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Cinque formaggi</div>
+        <div class="menu-item-desc">Caciocavallo, gorgonzola, emmental, parmigiano, provola affumicata, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Paesana</div>
+        <div class="menu-item-desc">Mozzarella, patate schiacciate, salsiccia, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Bronte</div>
+        <div class="menu-item-desc">Mozzarella, crema di pistacchio, mortadella, stracciata, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Primavera</div>
+        <div class="menu-item-desc">Mozzarella, prosciutto crudo, rucola, scaglie di parmigiano, pomodorini, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Crispy</div>
+        <div class="menu-item-desc">Mozzarella, patatine dippers, bacon croccante, fonduta di cheddar, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Porchettina</div>
+        <div class="menu-item-desc">Mozzarella, porchetta, patate al forno, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Nerano</div>
+        <div class="menu-item-desc">Mozzarella, zucchine, polpettine, scaglie di caciocavallo, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Carbonaccia</div>
+        <div class="menu-item-desc">Carbocrema, mozzarella, pancetta, cipolla, pepe, parmigiano, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">12,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Cacio e pepe</div>
+        <div class="menu-item-desc">Fonduta di pecorino, pepe, mozzarella, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+  </section>
+
+  <!-- LE PIZZE A NOI DEDICATE -->
+  <section class="menu-section" id="famiglia">
+    <div class="menu-section-header">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Le Pizze a Noi Dedicate</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+
+    <div class="famiglia-intro">
+      <p>Ogni pizza porta il nome di qualcuno che amiamo. Sono le nostre, sono di famiglia.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Dalia</div>
+        <div class="menu-item-desc">Crema di tartufo, salsiccia, patate al forno, funghi porcini, provola, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Gianni</div>
+        <div class="menu-item-desc">Crema di tartufo, patate al forno, salame dolce, prosciutto cotto, funghi porcini, provola affumicata, origano, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">11,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Nonna Margherita</div>
+        <div class="menu-item-desc">Mozzarella, datterino giallo, datterino rosso, scaglie di parmigiano, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Anthony</div>
+        <div class="menu-item-desc">Provola, patate al forno, salsiccia, funghi champignon, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Noemi</div>
+        <div class="menu-item-desc">Mozzarella, polpettine, scaglie di caciocavallo, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Alessandra</div>
+        <div class="menu-item-desc">Mozzarella, bresaola, pomodorini, rucola, scaglie di grana e olio evo</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Nonno Vincenzo</div>
+        <div class="menu-item-desc">Pomodoro, salsiccia, funghi porcini, provola affumicata, pepe, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Roselli</div>
+        <div class="menu-item-desc">Provola affumicata, panna, prosciutto cotto, crocchè artigianale, basilico e olio evo</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+  </section>
+
+  <!-- RIPIENI AL FORNO -->
+  <section class="menu-section" id="ripieni">
+    <div class="menu-section-header">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Ripieni al Forno</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Calzone al salame</div>
+        <div class="menu-item-desc">Salame, ricotta, mozzarella, pomodoro</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Calzone al prosciutto</div>
+        <div class="menu-item-desc">Prosciutto cotto, mozzarella, pomodoro</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Calzone al forno napoletano</div>
+        <div class="menu-item-desc">Cicoli, ricotta, pepe, provola affumicata, pomodoro</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Tronchetto</div>
+        <div class="menu-item-desc">Emmenthal, mozzarella, caciocavallo, prosciutto crudo, scaglie di parmigiana, rucola e pomodorini</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+  </section>
+
+  <!-- SALTIMBOCCA -->
+  <section class="menu-section" id="saltimbocca">
+    <div class="menu-section-header">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Saltimbocca</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Irpino</div>
+        <div class="menu-item-desc">Crema di tartufo, provola affumicata, funghi porcini, patate al forno e salsiccia</div>
+      </div>
+      <div class="menu-item-price">10,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Favola</div>
+        <div class="menu-item-desc">Crema di pistacchi, mortadella, stracciata di bufala, pistacchi</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Forenza</div>
+        <div class="menu-item-desc">Provola, salsiccia e friarielli</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">San Patrignano</div>
+        <div class="menu-item-desc">Prosciutto crudo, mozzarella, pomodorini</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Brisval</div>
+        <div class="menu-item-desc">Bresaola, mozzarella, rucola, pomodorini, scaglie di parmigiano</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Baby</div>
+        <div class="menu-item-desc">Wurstel, patatine stick, provola, maionese</div>
+      </div>
+      <div class="menu-item-price">8,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name">Oriti</div>
+        <div class="menu-item-desc">Porchetta, provola, patatine, pomodoro</div>
+      </div>
+      <div class="menu-item-price">9,00€</div>
+    </div>
+  </section>
+
+  <!-- BIBITE -->
+  <section class="menu-section" id="bibite">
+    <div class="menu-section-header">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Bibite</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+
+    <div class="drink-grid">
+      <div class="menu-item">
+        <div class="menu-item-left"><div class="menu-item-name">Acqua naturale da un litro</div></div>
+        <div class="menu-item-price">2,50€</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left"><div class="menu-item-name">Acqua frizzante da un litro</div></div>
+        <div class="menu-item-price">2,50€</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left"><div class="menu-item-name">Coca Cola 33cl</div></div>
+        <div class="menu-item-price">3,00€</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left"><div class="menu-item-name">Fanta 33cl</div></div>
+        <div class="menu-item-price">3,00€</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left"><div class="menu-item-name">Sprite 33cl</div></div>
+        <div class="menu-item-price">3,00€</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left"><div class="menu-item-name">Estathè 33cl</div></div>
+        <div class="menu-item-price">3,00€</div>
+      </div>
+    </div>
+
+    <div class="menu-section-header" style="margin-top:3rem">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Birre in Bottiglia</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+    <div class="drink-grid">
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Beck's 33 cl</div></div><div class="menu-item-price">3,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Heineken 33 cl</div></div><div class="menu-item-price">3,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Heineken 66 cl</div></div><div class="menu-item-price">5,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Nastro Azzurro 33 cl</div></div><div class="menu-item-price">3,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ichnusa 33 cl</div></div><div class="menu-item-price">3,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ichnusa 33 cl non filtrata</div></div><div class="menu-item-price">3,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ichnusa 66 cl</div></div><div class="menu-item-price">5,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ichnusa non filtrata 50cl</div></div><div class="menu-item-price">5,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Nastro Azzurro 66 cl</div></div><div class="menu-item-price">5,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ceres</div></div><div class="menu-item-price">4,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Tennent's</div></div><div class="menu-item-price">4,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Leffe Rossa 33cl</div></div><div class="menu-item-price">4,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Leffe Rossa 75cl</div></div><div class="menu-item-price">8,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Birra artigianale 50cl</div></div><div class="menu-item-price">9,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Birra artigianale bionda/rossa 50cl</div></div><div class="menu-item-price">9,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Birra artigianale bionda/rossa 75cl</div></div><div class="menu-item-price">12,00€</div></div>
+    </div>
+
+    <div class="menu-section-header" style="margin-top:3rem">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Cantina</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Lancers bott. 0,75 cl</div></div><div class="menu-item-price">15,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Falanghina D.O.C.</div></div><div class="menu-item-price">20,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Greco di tufo D.O.C.G.</div></div><div class="menu-item-price">30,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Aglianico</div></div><div class="menu-item-price">20,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Fiano di Avellino D.O.C.G.</div></div><div class="menu-item-price">30,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Vino bianco e rosso locale 0,25</div></div><div class="menu-item-price">3,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Vino bianco e rosso locale 0,50</div></div><div class="menu-item-price">5,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Vino bianco e rosso locale litro</div></div><div class="menu-item-price">9,00€</div></div>
+
+    <div class="menu-section-header" style="margin-top:3rem">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Bar</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+    <div class="drink-grid">
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Caffè</div></div><div class="menu-item-price">1,50€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Amaro</div></div><div class="menu-item-price">3,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Limoncello</div></div><div class="menu-item-price">3,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Meloncello</div></div><div class="menu-item-price">3,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Liquirizia</div></div><div class="menu-item-price">3,00€</div></div>
+      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Grappa</div></div><div class="menu-item-price">4,00€</div></div>
+    </div>
+  </section>
+
+  <!-- DOLCI -->
+  <section class="menu-section" id="dolci">
+    <div class="menu-section-header">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Dolci</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Tiramisù</div></div><div class="menu-item-price">4,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cuore caldo cioccolato</div></div><div class="menu-item-price">5,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Pizzatella</div></div><div class="menu-item-price">8,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Straccetti alla nutella</div></div><div class="menu-item-price">10,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Profiterole al cioccolato</div></div><div class="menu-item-price">5,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Profiterole alla nocciola</div></div><div class="menu-item-price">5,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Semifreddo al cioccolato</div></div><div class="menu-item-price">5,00€</div></div>
+    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Semifreddo al pistacchio</div></div><div class="menu-item-price">5,00€</div></div>
+
+    <div class="menu-section-header" style="margin-top:3rem">
+      <div class="menu-section-line"></div>
+      <h2 class="menu-section-title">Gelati</h2>
+      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name" style="color:rgba(245,240,232,0.4)">Tartufi – NON DISPONIBILE</div>
+        <div class="menu-item-desc">Bianco al caffè con granelli di meringhe / Cioccolato con crema al latte e polvere di cioccolato</div>
+      </div>
+      <div class="menu-item-price" style="color:rgba(201,168,76,0.4)">5,00€</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-left">
+        <div class="menu-item-name" style="color:rgba(245,240,232,0.4)">Bicchiere di gelato – NON DISPONIBILE</div>
+        <div class="menu-item-desc">Gelato alla frutta / Gelato alla nocciola</div>
+      </div>
+      <div class="menu-item-price" style="color:rgba(201,168,76,0.4)">6,00€</div>
+    </div>
+  </section>
+
+  <!-- COPERTO -->
+  <section class="menu-section" id="coperto" style="padding-top:3rem;padding-bottom:1rem;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2rem;border:1px solid rgba(201,168,76,0.2);background:rgba(201,168,76,0.04);">
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--oro);">Coperto</span>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:600;color:var(--oro);">2,00€</span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">Dalia</div>
+  <div class="footer-tagline">Valori di Famiglia</div>
+  <div class="footer-copy">© 2024 Dalia – Valori di Famiglia · Tutti i diritti riservati · <a href="#" style="color:inherit">Cookie Policy</a></div>
+</footer>
+
+<!-- ─── SCRIPTS ─── -->
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  function scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = 140;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('.menu-section[id]');
+  const navBtns = document.querySelectorAll('.menu-nav-btn');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navBtns.forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.getAttribute('onclick')?.includes(id)) {
+            btn.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-120px 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
