@@ -650,3 +650,177 @@ footer {
   .menu-nav-btn { padding: 0.7rem 0.5rem; font-size: 0.58rem; letter-spacing: 0.1em; }
   .hero-cta { padding: 0.75rem 1.5rem; }
 }
+/* FIX MOBILE GENERALE */
+@media (max-width: 600px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  nav {
+    height: 60px;
+    padding: 0 1rem;
+  }
+
+  .nav-logo-combo {
+    max-width: 70%;
+    overflow: hidden;
+  }
+
+  .nav-logo-combo .nl-icon {
+    height: 34px;
+  }
+
+  .nav-logo-combo .nl-scritta {
+    height: 15px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding-top: 60px;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+    line-height: 1.05;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    gap: 0.6rem;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    width: 22px;
+  }
+
+  .menu-hero {
+    padding-top: 95px;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .menu-hero-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .menu-hero-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    line-height: 1.8;
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .menu-nav {
+    top: 60px;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .menu-nav-inner {
+    justify-content: flex-start;
+    min-width: max-content;
+    padding: 0 0.8rem;
+  }
+
+  .menu-nav-btn {
+    padding: 0.75rem 0.75rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+  }
+
+  .menu-main {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem 4rem;
+  }
+
+  .menu-section {
+    padding-top: 3.5rem;
+  }
+
+  .menu-section-header {
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .menu-section-title {
+    font-size: 1.25rem;
+    letter-spacing: 0.18em;
+  }
+
+  .menu-item {
+    padding: 1.2rem 0;
+  }
+
+  .menu-item-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+
+  .menu-item-name {
+    font-size: 1.2rem;
+    line-height: 1.25;
+    max-width: calc(100% - 80px);
+    overflow-wrap: break-word;
+  }
+
+  .menu-item-price {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    min-width: 70px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .btn-allergeni {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .storia {
+    grid-template-columns: 1fr;
+  }
+
+  .storia-content {
+    padding: 3rem 1.3rem;
+  }
+
+  .trovarci {
+    padding: 3rem 1rem;
+  }
+
+  .trovarci-grid {
+    grid-template-columns: 1fr;
+  }
+}
