@@ -3,732 +3,799 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menù – Pizzeria Dalia</title>
+  <title>Pizzeria Dalia | Menù</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 </head>
 <body>
 
-<!-- ─── NAV ─── -->
+<!-- ═══════════════ NAV ═══════════════ -->
 <nav id="navbar">
-  <a class="nav-logo" href="index.html">
-    <div class="nav-logo-text">
-      Dalia
-      <span>Valori di Famiglia</span>
-    </div>
+  <a class="nav-logo-combo" href="index.html">
+    <img src="logo.png" alt="Dalia" class="nl-icon">
+    <img src="logo_scritta.png" alt="Dalia – Valori di Famiglia" class="nl-scritta">
   </a>
-  <ul class="nav-links">
+  <div class="nav-toggle" id="navToggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
     <li><a href="menu.html" class="active">Menù</a></li>
-    <li><a href="#social">Social</a></li>
+    <li><a href="https://www.instagram.com/dalia_valori_di_famiglia/" target="_blank" rel="noopener">Social</a></li>
   </ul>
 </nav>
 
-<!-- ─── MENU HERO ─── -->
+<!-- ═══════════════ HERO ═══════════════ -->
 <div class="menu-hero">
   <h1 class="menu-hero-title">Il nostro <em>Menù</em></h1>
   <p class="menu-hero-sub">Ingredienti selezionati · Forno a legna · Tradizione napoletana</p>
 </div>
 
-<!-- ─── STICKY NAV ─── -->
-<div class="menu-nav" id="menuNav">
+<!-- ═══════════════ STICKY CATEGORY NAV ═══════════════ -->
+<div class="menu-nav">
   <div class="menu-nav-inner">
-    <button class="menu-nav-btn active" onclick="scrollTo('antipasti')">Antipasti</button>
-    <button class="menu-nav-btn" onclick="scrollTo('fritture')">Fritture</button>
-    <button class="menu-nav-btn" onclick="scrollTo('pizze-rosse')">Pizze Rosse</button>
-    <button class="menu-nav-btn" onclick="scrollTo('pizze-bianche')">Pizze Bianche</button>
-    <button class="menu-nav-btn" onclick="scrollTo('famiglia')">Le Nostre</button>
-    <button class="menu-nav-btn" onclick="scrollTo('ripieni')">Ripieni</button>
-    <button class="menu-nav-btn" onclick="scrollTo('saltimbocca')">Saltimbocca</button>
-    <button class="menu-nav-btn" onclick="scrollTo('bibite')">Bevande</button>
-    <button class="menu-nav-btn" onclick="scrollTo('dolci')">Dolci</button>
+    <button class="menu-nav-btn active" onclick="goTo('antipasti')">Antipasti</button>
+    <button class="menu-nav-btn" onclick="goTo('fritture')">Fritture</button>
+    <button class="menu-nav-btn" onclick="goTo('pizze-rosse')">Pizze Rosse</button>
+    <button class="menu-nav-btn" onclick="goTo('pizze-bianche')">Pizze Bianche</button>
+    <button class="menu-nav-btn" onclick="goTo('famiglia')">Le Nostre</button>
+    <button class="menu-nav-btn" onclick="goTo('ripieni')">Ripieni</button>
+    <button class="menu-nav-btn" onclick="goTo('saltimbocca')">Saltimbocca</button>
+    <button class="menu-nav-btn" onclick="goTo('bibite')">Bevande</button>
+    <button class="menu-nav-btn" onclick="goTo('dolci')">Dolci</button>
   </div>
 </div>
 
-<!-- ─── MENU CONTENT ─── -->
+<!-- ═══════════════ MENU ═══════════════ -->
 <main class="menu-main">
 
-  <!-- ANTIPASTI -->
-  <section class="menu-section" id="antipasti">
-    <div class="menu-section-header">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Antipasti</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
+<!-- SVG info icon riutilizzabile inline -->
+<!-- uso una macro per non ripetere il codice -->
 
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Bresaola, rucola, parmigiano e pomodorini</div>
-      </div>
-      <div class="menu-item-price">13,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Prosciutto crudo e mozzarella di bufala</div>
-      </div>
-      <div class="menu-item-price">13,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Antipasto all'italiana</div>
-      </div>
-      <div class="menu-item-price">13,00€</div>
-    </div>
-  </section>
+<!-- ════════ ANTIPASTI ════════ -->
+<section class="menu-section" id="antipasti">
+  <div class="menu-section-header">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Antipasti</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
 
-  <!-- LE NOSTRE FRITTURE -->
-  <section class="menu-section" id="fritture">
-    <div class="menu-section-header">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Le Nostre Fritture</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Bresaola, rucola, parmigiano e pomodorini</span><span class="menu-item-price">13,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span></div></div></div>
+  </div>
 
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Frittatina classica</div></div>
-      <div class="menu-item-price">3,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Frittatina cacio e pepe</div></div>
-      <div class="menu-item-price">3,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Crocchè Classico con mozzarella</div></div>
-      <div class="menu-item-price">1,50€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Crocchettone bronte</div></div>
-      <div class="menu-item-price">4,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Crocchettone bacon e cheddar</div></div>
-      <div class="menu-item-price">4,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Crocchettone porcini e tartufo con scaglie di caciocavallo</div></div>
-      <div class="menu-item-price">5,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Crocchettone cacio e pepe con scaglie di caciocavallo</div></div>
-      <div class="menu-item-price">4,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Arancino alla bolognese</div></div>
-      <div class="menu-item-price">1,50€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">3 Stick di mozzarella impanata</div></div>
-      <div class="menu-item-price">2,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Fritto Misto Dalia</div>
-        <div class="menu-item-desc">contiene di patatine, crocchè, arancino, frittatina, 1 stick di mozzarella</div>
-      </div>
-      <div class="menu-item-price">7,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta stick piccola</div></div>
-      <div class="menu-item-price">3,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta stick grande</div></div>
-      <div class="menu-item-price">5,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta dippers</div></div>
-      <div class="menu-item-price">5,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta chips</div></div>
-      <div class="menu-item-price">5,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta twisters</div></div>
-      <div class="menu-item-price">6,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta con Wurstel e Cheddar</div></div>
-      <div class="menu-item-price">7,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta alla zingara</div></div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left"><div class="menu-item-name">Patatina fritta con Bacon e Cheddar</div></div>
-      <div class="menu-item-price">7,00€</div>
-    </div>
-  </section>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Prosciutto crudo e mozzarella di bufala</span><span class="menu-item-price">13,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span></div></div></div>
+  </div>
 
-  <!-- PIZZE ROSSE -->
-  <section class="menu-section" id="pizze-rosse">
-    <div class="menu-section-header">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Le Nostre Pizze Rosse</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Antipasto all'italiana</span><span class="menu-item-price">13,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span></div></div></div>
+  </div>
+</section>
 
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Marinara</div>
-        <div class="menu-item-desc">Pomodoro, origano, aglio, acciughe, olive e olio evo</div>
-      </div>
-      <div class="menu-item-price">4,50€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Napoletana</div>
-        <div class="menu-item-desc">Pomodoro, origano, aglio e olio evo</div>
-      </div>
-      <div class="menu-item-price">4,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Cosacca</div>
-        <div class="menu-item-desc">Pomodoro, parmigiano grattugiato, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">4,50€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Margherita</div>
-        <div class="menu-item-desc">Pomodoro, mozzarella, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">5,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Diavola</div>
-        <div class="menu-item-desc">Pomodoro, spianata piccante, mozzarella, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">7,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Siciliana</div>
-        <div class="menu-item-desc">Pomodoro, mozzarella, melanzane, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">7,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Provola e Pepe</div>
-        <div class="menu-item-desc">Pomodoro, provola, pepe, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">6,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Bufalina</div>
-        <div class="menu-item-desc">Pomodoro, mozzarella di bufala, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Capricciosa</div>
-        <div class="menu-item-desc">Pomodoro, carciofi, olive, salame, prosciutto cotto, funghi, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Pitta</div>
-        <div class="menu-item-desc">Pomodoro, mozzarella, salsiccia, patatine fritte, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Americana</div>
-        <div class="menu-item-desc">Mozzarella, pomodoro, wurstel, patatine, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">7,00€</div>
-    </div>
-  </section>
+<!-- ════════ FRITTURE ════════ -->
+<section class="menu-section" id="fritture">
+  <div class="menu-section-header">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Le Nostre Fritture</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
 
-  <!-- PIZZE BIANCHE -->
-  <section class="menu-section" id="pizze-bianche">
-    <div class="menu-section-header">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Le Nostre Pizze Bianche</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Frittatina classica</span><span class="menu-item-price">3,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
 
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Panciamia</div>
-        <div class="menu-item-desc">Mozzarella, pancetta, patate al forno, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Tedesca</div>
-        <div class="menu-item-desc">Mozzarella, wurstel, patatine, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">7,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Tonnarella</div>
-        <div class="menu-item-desc">Mozzarella, tonno, cipolla, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">7,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Ortolana</div>
-        <div class="menu-item-desc">Mozzarella, crema di zucchine, peperoni, melanzane, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Diavola 2.0</div>
-        <div class="menu-item-desc">Mozzarella, spianata piccante, gorgonzola, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Mimosa</div>
-        <div class="menu-item-desc">Panna, mais, prosciutto cotto, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">7,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Salsiccia e friarielli</div>
-        <div class="menu-item-desc">Mozzarella, salsiccia, friarielli, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Croccopizza</div>
-        <div class="menu-item-desc">Patate al forno, provola, pancetta, funghi porcini, crocchè, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Fiocco</div>
-        <div class="menu-item-desc">Mozzarella, patate schiacciate, prosciutto cotto, pepe, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Cinque formaggi</div>
-        <div class="menu-item-desc">Caciocavallo, gorgonzola, emmental, parmigiano, provola affumicata, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Paesana</div>
-        <div class="menu-item-desc">Mozzarella, patate schiacciate, salsiccia, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Bronte</div>
-        <div class="menu-item-desc">Mozzarella, crema di pistacchio, mortadella, stracciata, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Primavera</div>
-        <div class="menu-item-desc">Mozzarella, prosciutto crudo, rucola, scaglie di parmigiano, pomodorini, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Crispy</div>
-        <div class="menu-item-desc">Mozzarella, patatine dippers, bacon croccante, fonduta di cheddar, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Porchettina</div>
-        <div class="menu-item-desc">Mozzarella, porchetta, patate al forno, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Nerano</div>
-        <div class="menu-item-desc">Mozzarella, zucchine, polpettine, scaglie di caciocavallo, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Carbonaccia</div>
-        <div class="menu-item-desc">Carbocrema, mozzarella, pancetta, cipolla, pepe, parmigiano, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">12,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Cacio e pepe</div>
-        <div class="menu-item-desc">Fonduta di pecorino, pepe, mozzarella, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-  </section>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Frittatina cacio e pepe</span><span class="menu-item-price">3,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
 
-  <!-- LE PIZZE A NOI DEDICATE -->
-  <section class="menu-section" id="famiglia">
-    <div class="menu-section-header">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Le Pizze a Noi Dedicate</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Crocchè Classico con mozzarella</span><span class="menu-item-price">1,50€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
 
-    <div class="famiglia-intro">
-      <p>Ogni pizza porta il nome di qualcuno che amiamo. Sono le nostre, sono di famiglia.</p>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Crocchettone bronte</span><span class="menu-item-price">4,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌰 Frutta a guscio</span></div></div></div>
+  </div>
 
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Dalia</div>
-        <div class="menu-item-desc">Crema di tartufo, salsiccia, patate al forno, funghi porcini, provola, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Gianni</div>
-        <div class="menu-item-desc">Crema di tartufo, patate al forno, salame dolce, prosciutto cotto, funghi porcini, provola affumicata, origano, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">11,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Nonna Margherita</div>
-        <div class="menu-item-desc">Mozzarella, datterino giallo, datterino rosso, scaglie di parmigiano, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Anthony</div>
-        <div class="menu-item-desc">Provola, patate al forno, salsiccia, funghi champignon, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Noemi</div>
-        <div class="menu-item-desc">Mozzarella, polpettine, scaglie di caciocavallo, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Alessandra</div>
-        <div class="menu-item-desc">Mozzarella, bresaola, pomodorini, rucola, scaglie di grana e olio evo</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Nonno Vincenzo</div>
-        <div class="menu-item-desc">Pomodoro, salsiccia, funghi porcini, provola affumicata, pepe, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Roselli</div>
-        <div class="menu-item-desc">Provola affumicata, panna, prosciutto cotto, crocchè artigianale, basilico e olio evo</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-  </section>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Crocchettone bacon e cheddar</span><span class="menu-item-price">4,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
 
-  <!-- RIPIENI AL FORNO -->
-  <section class="menu-section" id="ripieni">
-    <div class="menu-section-header">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Ripieni al Forno</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Crocchettone porcini e tartufo con scaglie di caciocavallo</span><span class="menu-item-price">5,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
 
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Calzone al salame</div>
-        <div class="menu-item-desc">Salame, ricotta, mozzarella, pomodoro</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Calzone al prosciutto</div>
-        <div class="menu-item-desc">Prosciutto cotto, mozzarella, pomodoro</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Calzone al forno napoletano</div>
-        <div class="menu-item-desc">Cicoli, ricotta, pepe, provola affumicata, pomodoro</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Tronchetto</div>
-        <div class="menu-item-desc">Emmenthal, mozzarella, caciocavallo, prosciutto crudo, scaglie di parmigiana, rucola e pomodorini</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-  </section>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Crocchettone cacio e pepe con scaglie di caciocavallo</span><span class="menu-item-price">4,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
 
-  <!-- SALTIMBOCCA -->
-  <section class="menu-section" id="saltimbocca">
-    <div class="menu-section-header">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Saltimbocca</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Arancino alla bolognese</span><span class="menu-item-price">1,50€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌿 Sedano</span></div></div></div>
+  </div>
 
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Irpino</div>
-        <div class="menu-item-desc">Crema di tartufo, provola affumicata, funghi porcini, patate al forno e salsiccia</div>
-      </div>
-      <div class="menu-item-price">10,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Favola</div>
-        <div class="menu-item-desc">Crema di pistacchi, mortadella, stracciata di bufala, pistacchi</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Forenza</div>
-        <div class="menu-item-desc">Provola, salsiccia e friarielli</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">San Patrignano</div>
-        <div class="menu-item-desc">Prosciutto crudo, mozzarella, pomodorini</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Brisval</div>
-        <div class="menu-item-desc">Bresaola, mozzarella, rucola, pomodorini, scaglie di parmigiano</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Baby</div>
-        <div class="menu-item-desc">Wurstel, patatine stick, provola, maionese</div>
-      </div>
-      <div class="menu-item-price">8,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name">Oriti</div>
-        <div class="menu-item-desc">Porchetta, provola, patatine, pomodoro</div>
-      </div>
-      <div class="menu-item-price">9,00€</div>
-    </div>
-  </section>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">3 Stick di mozzarella impanata</span><span class="menu-item-price">2,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
 
-  <!-- BIBITE -->
-  <section class="menu-section" id="bibite">
-    <div class="menu-section-header">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Bibite</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Fritto Misto Dalia</span><span class="menu-item-price">7,00€</span></div>
+    <div class="menu-item-desc">contorno di patatine, crocchè, arancino, frittatina, 1 stick di mozzarella</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌿 Sedano</span></div></div></div>
+  </div>
 
-    <div class="drink-grid">
-      <div class="menu-item">
-        <div class="menu-item-left"><div class="menu-item-name">Acqua naturale da un litro</div></div>
-        <div class="menu-item-price">2,50€</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-left"><div class="menu-item-name">Acqua frizzante da un litro</div></div>
-        <div class="menu-item-price">2,50€</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-left"><div class="menu-item-name">Coca Cola 33cl</div></div>
-        <div class="menu-item-price">3,00€</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-left"><div class="menu-item-name">Fanta 33cl</div></div>
-        <div class="menu-item-price">3,00€</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-left"><div class="menu-item-name">Sprite 33cl</div></div>
-        <div class="menu-item-price">3,00€</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-left"><div class="menu-item-name">Estathè 33cl</div></div>
-        <div class="menu-item-price">3,00€</div>
-      </div>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Patatina fritta stick piccola</span><span class="menu-item-price">3,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
 
-    <div class="menu-section-header" style="margin-top:3rem">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Birre in Bottiglia</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
-    <div class="drink-grid">
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Beck's 33 cl</div></div><div class="menu-item-price">3,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Heineken 33 cl</div></div><div class="menu-item-price">3,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Heineken 66 cl</div></div><div class="menu-item-price">5,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Nastro Azzurro 33 cl</div></div><div class="menu-item-price">3,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ichnusa 33 cl</div></div><div class="menu-item-price">3,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ichnusa 33 cl non filtrata</div></div><div class="menu-item-price">3,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ichnusa 66 cl</div></div><div class="menu-item-price">5,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ichnusa non filtrata 50cl</div></div><div class="menu-item-price">5,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Nastro Azzurro 66 cl</div></div><div class="menu-item-price">5,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Ceres</div></div><div class="menu-item-price">4,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Tennent's</div></div><div class="menu-item-price">4,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Leffe Rossa 33cl</div></div><div class="menu-item-price">4,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Leffe Rossa 75cl</div></div><div class="menu-item-price">8,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Birra artigianale 50cl</div></div><div class="menu-item-price">9,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Birra artigianale bionda/rossa 50cl</div></div><div class="menu-item-price">9,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Birra artigianale bionda/rossa 75cl</div></div><div class="menu-item-price">12,00€</div></div>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Patatina fritta stick grande</span><span class="menu-item-price">5,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
 
-    <div class="menu-section-header" style="margin-top:3rem">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Cantina</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Lancers bott. 0,75 cl</div></div><div class="menu-item-price">15,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Falanghina D.O.C.</div></div><div class="menu-item-price">20,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Greco di tufo D.O.C.G.</div></div><div class="menu-item-price">30,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Aglianico</div></div><div class="menu-item-price">20,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Fiano di Avellino D.O.C.G.</div></div><div class="menu-item-price">30,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Vino bianco e rosso locale 0,25</div></div><div class="menu-item-price">3,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Vino bianco e rosso locale 0,50</div></div><div class="menu-item-price">5,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Vino bianco e rosso locale litro</div></div><div class="menu-item-price">9,00€</div></div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Patatina fritta dippers</span><span class="menu-item-price">5,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
 
-    <div class="menu-section-header" style="margin-top:3rem">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Bar</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
-    <div class="drink-grid">
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Caffè</div></div><div class="menu-item-price">1,50€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Amaro</div></div><div class="menu-item-price">3,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Limoncello</div></div><div class="menu-item-price">3,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Meloncello</div></div><div class="menu-item-price">3,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Liquirizia</div></div><div class="menu-item-price">3,00€</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Grappa</div></div><div class="menu-item-price">4,00€</div></div>
-    </div>
-  </section>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Patatina fritta chips</span><span class="menu-item-price">5,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
 
-  <!-- DOLCI -->
-  <section class="menu-section" id="dolci">
-    <div class="menu-section-header">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Dolci</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Patatina fritta twisters</span><span class="menu-item-price">6,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
 
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Tiramisù</div></div><div class="menu-item-price">4,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cuore caldo cioccolato</div></div><div class="menu-item-price">5,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Pizzatella</div></div><div class="menu-item-price">8,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Straccetti alla nutella</div></div><div class="menu-item-price">10,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Profiterole al cioccolato</div></div><div class="menu-item-price">5,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Profiterole alla nocciola</div></div><div class="menu-item-price">5,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Semifreddo al cioccolato</div></div><div class="menu-item-price">5,00€</div></div>
-    <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Semifreddo al pistacchio</div></div><div class="menu-item-price">5,00€</div></div>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Patatina fritta con Wurstel e Cheddar</span><span class="menu-item-price">7,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
 
-    <div class="menu-section-header" style="margin-top:3rem">
-      <div class="menu-section-line"></div>
-      <h2 class="menu-section-title">Gelati</h2>
-      <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.6),transparent)"></div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name" style="color:rgba(245,240,232,0.4)">Tartufi – NON DISPONIBILE</div>
-        <div class="menu-item-desc">Bianco al caffè con granelli di meringhe / Cioccolato con crema al latte e polvere di cioccolato</div>
-      </div>
-      <div class="menu-item-price" style="color:rgba(201,168,76,0.4)">5,00€</div>
-    </div>
-    <div class="menu-item">
-      <div class="menu-item-left">
-        <div class="menu-item-name" style="color:rgba(245,240,232,0.4)">Bicchiere di gelato – NON DISPONIBILE</div>
-        <div class="menu-item-desc">Gelato alla frutta / Gelato alla nocciola</div>
-      </div>
-      <div class="menu-item-price" style="color:rgba(201,168,76,0.4)">6,00€</div>
-    </div>
-  </section>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Patatina fritta alla zingara</span><span class="menu-item-price">8,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
 
-  <!-- COPERTO -->
-  <section class="menu-section" id="coperto" style="padding-top:3rem;padding-bottom:1rem;">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2rem;border:1px solid rgba(201,168,76,0.2);background:rgba(201,168,76,0.04);">
-      <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--oro);">Coperto</span>
-      <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:600;color:var(--oro);">2,00€</span>
-    </div>
-  </section>
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Patatina fritta con Bacon e Cheddar</span><span class="menu-item-price">7,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
+</section>
+
+<!-- ════════ PIZZE ROSSE ════════ -->
+<section class="menu-section" id="pizze-rosse">
+  <div class="menu-section-header">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Le Nostre Pizze Rosse</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Marinara</span><span class="menu-item-price">4,50€</span></div>
+    <div class="menu-item-desc">Pomodoro, origano, aglio, acciughe, olive e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🐟 Pesce</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Napoletana</span><span class="menu-item-price">4,00€</span></div>
+    <div class="menu-item-desc">Pomodoro, origano, aglio e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Cosacca</span><span class="menu-item-price">4,50€</span></div>
+    <div class="menu-item-desc">Pomodoro, parmigiano grattugiato, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Margherita</span><span class="menu-item-price">5,00€</span></div>
+    <div class="menu-item-desc">Pomodoro, mozzarella, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Diavola</span><span class="menu-item-price">7,00€</span></div>
+    <div class="menu-item-desc">Pomodoro, spianata piccante, mozzarella, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Siciliana</span><span class="menu-item-price">7,00€</span></div>
+    <div class="menu-item-desc">Pomodoro, mozzarella, melanzane, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Provola e Pepe</span><span class="menu-item-price">6,00€</span></div>
+    <div class="menu-item-desc">Pomodoro, provola, pepe, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Bufalina</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Pomodoro, mozzarella di bufala, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Capricciosa</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Pomodoro, carciofi, olive, salame, prosciutto cotto, funghi, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">💨 Anidride solforosa / Solfiti</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Pitta</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Pomodoro, mozzarella, salsiccia, patatine fritte, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Americana</span><span class="menu-item-price">7,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, pomodoro, wurstel, patatine, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
+</section>
+
+<!-- ════════ PIZZE BIANCHE ════════ -->
+<section class="menu-section" id="pizze-bianche">
+  <div class="menu-section-header">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Le Nostre Pizze Bianche</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Panciamia</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, pancetta, patate al forno, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Tedesca</span><span class="menu-item-price">7,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, wurstel, patatine, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Tonnarella</span><span class="menu-item-price">7,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, tonno, cipolla, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🐟 Pesce</span><span class="al-tag">🌿 Sedano</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Ortolana</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, crema di zucchine, peperoni, melanzane, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Diavola 2.0</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, spianata piccante, gorgonzola, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Mimosa</span><span class="menu-item-price">7,00€</span></div>
+    <div class="menu-item-desc">Panna, mais, prosciutto cotto, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Salsiccia e friarielli</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, salsiccia, friarielli, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Croccopizza</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Patate al forno, provola, pancetta, funghi porcini, crocchè, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Fiocco</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, patate schiacciate, prosciutto cotto, pepe, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Cinque formaggi</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Caciocavallo, gorgonzola, emmental, parmigiano, provola affumicata, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Paesana</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, patate schiacciate, salsiccia, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Bronte</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, crema di pistacchio, mortadella, stracciata, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌰 Frutta a guscio</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Primavera</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, prosciutto crudo, rucola, scaglie di parmigiano, pomodorini, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Crispy</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, patatine dippers, bacon croccante, fonduta di cheddar, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">❄️ Prodotto surgelato</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Porchettina</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, porchetta, patate al forno, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Nerano</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, zucchine, polpettine, scaglie di caciocavallo, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🍳 Uova</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Carbonaccia</span><span class="menu-item-price">12,00€</span></div>
+    <div class="menu-item-desc">Carbocrema, mozzarella, pancetta, cipolla, pepe, parmigiano, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🍳 Uova</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Cacio e pepe</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Fonduta di pecorino, pepe, mozzarella, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+</section>
+
+<!-- ════════ LE PIZZE A NOI DEDICATE ════════ -->
+<section class="menu-section" id="famiglia">
+  <div class="menu-section-header">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Le Pizze a Noi Dedicate</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+  <div class="famiglia-intro"><p>Ogni pizza porta il nome di qualcuno che amiamo. Sono le nostre, sono di famiglia.</p></div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Dalia</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Crema di tartufo, salsiccia, patate al forno, funghi porcini, provola, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Gianni</span><span class="menu-item-price">11,00€</span></div>
+    <div class="menu-item-desc">Crema di tartufo, patate al forno, salame dolce, prosciutto cotto, funghi porcini, provola affumicata, origano, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Nonna Margherita</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, datterino giallo, datterino rosso, scaglie di parmigiano, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Anthony</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Provola, patate al forno, salsiccia, funghi champignon, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Noemi</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, polpettine, scaglie di caciocavallo, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Alessandra</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Mozzarella, bresaola, pomodorini, rucola, scaglie di grana e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Nonno Vincenzo</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Pomodoro, salsiccia, funghi porcini, provola affumicata, pepe, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Rosellì</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Provola affumicata, panna, prosciutto cotto, crocchè artigianale, basilico e olio evo</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🍳 Uova</span></div></div></div>
+  </div>
+</section>
+
+<!-- ════════ RIPIENI AL FORNO ════════ -->
+<section class="menu-section" id="ripieni">
+  <div class="menu-section-header">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Ripieni al Forno</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Calzone al salame</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Salame, ricotta, mozzarella, pomodoro</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Calzone al prosciutto</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Prosciutto cotto, mozzarella, pomodoro</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Calzone al forno napoletano</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Cicoli, ricotta, pepe, provola affumicata, pomodoro</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Tronchetto</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Emmenthal, mozzarella, caciocavallo, prosciutto crudo, scaglie di parmigiano, rucola e pomodorini</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+</section>
+
+<!-- ════════ SALTIMBOCCA ════════ -->
+<section class="menu-section" id="saltimbocca">
+  <div class="menu-section-header">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Saltimbocca</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Irpino</span><span class="menu-item-price">10,00€</span></div>
+    <div class="menu-item-desc">Crema di tartufo, provola affumicata, funghi porcini, patate al forno e salsiccia</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Favola</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Crema di pistacchi, mortadella, stracciata di bufala, pistacchi</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌰 Frutta a guscio</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Forenza</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Provola, salsiccia e friarielli</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">San Patrignano</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Prosciutto crudo, mozzarella, pomodorini</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Brisval</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Bresaola, mozzarella, rucola, pomodorini, scaglie di parmigiano</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Baby</span><span class="menu-item-price">8,00€</span></div>
+    <div class="menu-item-desc">Wurstel, patatine stick, provola, maionese</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🍳 Uova</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Oriti</span><span class="menu-item-price">9,00€</span></div>
+    <div class="menu-item-desc">Porchetta, provola, patatine, pomodoro</div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span></div></div></div>
+  </div>
+</section>
+
+<!-- ════════ BIBITE ════════ -->
+<section class="menu-section" id="bibite">
+  <div class="menu-section-header">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Bibite</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+  <div class="drink-grid">
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Acqua naturale da un litro</span><span class="menu-item-price">2,50€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Acqua frizzante da un litro</span><span class="menu-item-price">2,50€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Coca Cola 33cl</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Fanta 33cl</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Sprite 33cl</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Estathè 33cl</span><span class="menu-item-price">3,00€</span></div></div>
+  </div>
+
+  <div class="menu-section-header" style="margin-top:3rem">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Birre in Bottiglia</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+  <div class="drink-grid">
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Beck's 33 cl</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Heineken 33 cl</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Heineken 66 cl</span><span class="menu-item-price">5,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Nastro Azzurro 33 cl</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Ichnusa 33 cl</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Ichnusa 33 cl non filtrata</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Ichnusa 66 cl</span><span class="menu-item-price">5,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Ichnusa non filtrata 50cl</span><span class="menu-item-price">5,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Nastro Azzurro 66 cl</span><span class="menu-item-price">5,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Ceres</span><span class="menu-item-price">4,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Tennent's</span><span class="menu-item-price">4,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Leffe Rossa 33cl</span><span class="menu-item-price">4,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Leffe Rossa 75cl</span><span class="menu-item-price">8,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Birra artigianale 50cl</span><span class="menu-item-price">9,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Birra artigianale bionda/rossa 50cl</span><span class="menu-item-price">9,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Birra artigianale bionda/rossa 75cl</span><span class="menu-item-price">12,00€</span></div></div>
+  </div>
+
+  <div class="menu-section-header" style="margin-top:3rem">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Cantina</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+  <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Lancers bott. 0,75 cl</span><span class="menu-item-price">15,00€</span></div></div>
+  <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Falanghina D.O.C.</span><span class="menu-item-price">20,00€</span></div></div>
+  <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Greco di tufo D.O.C.G.</span><span class="menu-item-price">30,00€</span></div></div>
+  <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Aglianico</span><span class="menu-item-price">20,00€</span></div></div>
+  <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Fiano di Avellino D.O.C.G.</span><span class="menu-item-price">30,00€</span></div></div>
+  <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Vino bianco e rosso locale 0,25</span><span class="menu-item-price">3,00€</span></div></div>
+  <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Vino bianco e rosso locale 0,50</span><span class="menu-item-price">5,00€</span></div></div>
+  <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Vino bianco e rosso locale litro</span><span class="menu-item-price">9,00€</span></div></div>
+
+  <div class="menu-section-header" style="margin-top:3rem">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Bar</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+  <div class="drink-grid">
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Caffè</span><span class="menu-item-price">1,50€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Amaro</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Limoncello</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Meloncello</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Liquirizia</span><span class="menu-item-price">3,00€</span></div></div>
+    <div class="menu-item"><div class="menu-item-row"><span class="menu-item-name">Grappa</span><span class="menu-item-price">4,00€</span></div></div>
+  </div>
+</section>
+
+<!-- ════════ DOLCI ════════ -->
+<section class="menu-section" id="dolci">
+  <div class="menu-section-header">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Dolci</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Tiramisù</span><span class="menu-item-price">4,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🍳 Uova</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Cuore caldo cioccolato</span><span class="menu-item-price">5,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌰 Frutta a guscio</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Pizzatella</span><span class="menu-item-price">8,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌰 Frutta a guscio</span><span class="al-tag">🌿 Soia (lecitina)</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Straccetti alla nutella</span><span class="menu-item-price">10,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌰 Frutta a guscio</span><span class="al-tag">🌿 Soia (lecitina)</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Profiterole al cioccolato</span><span class="menu-item-price">5,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌰 Frutta a guscio</span><span class="al-tag">🌿 Soia (lecitina)</span><span class="al-tag">🍳 Uova</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Profiterole alla nocciola</span><span class="menu-item-price">5,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌰 Frutta a guscio</span><span class="al-tag">🌿 Soia (lecitina)</span><span class="al-tag">🍳 Uova</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Semifreddo al cioccolato</span><span class="menu-item-price">5,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌰 Frutta a guscio</span><span class="al-tag">🌿 Soia (lecitina)</span><span class="al-tag">🍳 Uova</span></div></div></div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-item-row"><span class="menu-item-name">Semifreddo al pistacchio</span><span class="menu-item-price">5,00€</span></div>
+    <div class="allergeni-wrap"><button class="btn-allergeni" onclick="toggleAl(this)">ⓘ Mostra allergeni</button>
+      <div class="allergeni-popup"><div class="allergeni-list"><span class="al-tag">🥛 Lattosio</span><span class="al-tag">🌾 Glutine</span><span class="al-tag">🌰 Frutta a guscio</span><span class="al-tag">🌿 Soia (lecitina)</span><span class="al-tag">🍳 Uova</span></div></div></div>
+  </div>
+
+  <div class="menu-section-header" style="margin-top:3rem">
+    <div class="menu-section-line"></div>
+    <h2 class="menu-section-title">Gelati</h2>
+    <div class="menu-section-line" style="background:linear-gradient(to left,rgba(192,57,43,0.55),transparent)"></div>
+  </div>
+
+  <div class="menu-item" style="opacity:0.45">
+    <div class="menu-item-row"><span class="menu-item-name">Tartufi – NON DISPONIBILE</span><span class="menu-item-price">5,00€</span></div>
+    <div class="menu-item-desc">Bianco al caffè con granelli di meringhe / Cioccolato con crema al latte e polvere di cioccolato</div>
+  </div>
+
+  <div class="menu-item" style="opacity:0.45">
+    <div class="menu-item-row"><span class="menu-item-name">Bicchiere di gelato – NON DISPONIBILE</span><span class="menu-item-price">6,00€</span></div>
+    <div class="menu-item-desc">Gelato alla frutta / Gelato alla nocciola</div>
+  </div>
+</section>
+
+<!-- COPERTO -->
+<div class="coperto-box">
+  <span>Coperto</span>
+  <span>2,00€</span>
+</div>
 
 </main>
 
-<!-- ─── FOOTER ─── -->
+<!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
-  <div class="footer-logo">Dalia</div>
-  <div class="footer-tagline">Valori di Famiglia</div>
-  <div class="footer-copy">© 2024 Dalia – Valori di Famiglia · Tutti i diritti riservati · <a href="#" style="color:inherit">Cookie Policy</a></div>
+  <div class="footer-bg">
+    <img src="logo.png" alt="Dalia" class="footer-logo-img">
+    <img src="logo_scritta.png" alt="Dalia – Valori di Famiglia" class="footer-scritta-img">
+    <div class="footer-tagline">Valori di Famiglia</div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/dalia_valori_di_famiglia/" target="_blank" rel="noopener" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61558592840116" target="_blank" rel="noopener" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    © 2024 Dalia – Valori di Famiglia · Tutti i diritti riservati ·
+    <a href="Cookie_Policy.pdf" target="_blank">Cookie Policy</a>
+  </div>
 </footer>
 
-<!-- ─── SCRIPTS ─── -->
 <script>
+  /* Navbar */
   const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  /* Hamburger */
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+    document.getElementById('navToggle').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+      document.getElementById('navToggle').classList.remove('open');
+    });
   });
 
-  function scrollTo(id) {
+  /* Scorri a sezione */
+  function goTo(id) {
     const el = document.getElementById(id);
-    if (el) {
-      const offset = 140;
-      const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+    if (!el) return;
+    const offset = document.querySelector('.menu-nav').offsetHeight + nav.offsetHeight + 8;
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
   }
 
-  // Active nav highlight on scroll
+  /* Allergeni toggle */
+  function toggleAl(btn) {
+    const popup = btn.nextElementSibling;
+    const open = popup.classList.toggle('open');
+    btn.textContent = open ? 'ⓘ Nascondi allergeni' : 'ⓘ Mostra allergeni';
+  }
+
+  /* Sticky nav highlight */
   const sections = document.querySelectorAll('.menu-section[id]');
-  const navBtns = document.querySelectorAll('.menu-nav-btn');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        navBtns.forEach(btn => {
-          btn.classList.remove('active');
-          if (btn.getAttribute('onclick')?.includes(id)) {
-            btn.classList.add('active');
-          }
-        });
-      }
+  const navBtns  = document.querySelectorAll('.menu-nav-btn');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const id = e.target.id;
+      navBtns.forEach(b => {
+        b.classList.remove('active');
+        if (b.getAttribute('onclick')?.includes(id)) b.classList.add('active');
+      });
     });
-  }, { rootMargin: '-120px 0px -60% 0px' });
-
+  }, { rootMargin: '-130px 0px -55% 0px' });
   sections.forEach(s => observer.observe(s));
 </script>
-
 </body>
 </html>
